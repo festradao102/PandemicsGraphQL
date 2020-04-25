@@ -1,0 +1,26 @@
+schema{
+query: Query
+mutation: Mutation
+}
+
+type Query{
+
+especies(count: Int!) : [Especie]
+especie(guid: Int!) : Especie
+}
+
+type Mutation {
+createEspecie(nombre: String, descubierto: String, tipo: String): Especie
+updateEspecie(guid: Int!,nombre: String, descubierto: String, tipo: String): Especie
+deleteEspecie(guid: Int!): Int
+}
+
+type Especie{
+
+guid: Int!
+uuid: String
+nombre: String
+descubierto: String
+fecha: String
+tipo: String
+}
